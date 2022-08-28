@@ -1,0 +1,97 @@
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 50px;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    margin: 0 0 30px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    background-color: rgba(255, 255, 255, .8);
+    /*background-image: linear-gradient(rgba(56, 185, 221, 0.8), rgba(24, 71, 223, 0.8));*/
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    aspect-ratio: 3/4;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    transition: all 400ms ease;
+    transform-style: preserve-3d;
+    background-color: white;
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    border: 2px solid rgb(29, 120, 223);
+    border-radius: 5px;
+    transition: all 400ms ease;
+}
+
+.front {
+    transform: rotateY(180deg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.back {
+    background-image: url(../img/capa.jpg);
+    backface-visibility: hidden;
+    background-size: cover;
+}
+
+.reveal-card {
+    transform: rotateY(180deg);
+}
+
+.disable-card {
+    filter: saturate(0);
+    opacity: 0.5;
+}
+.end {
+    position: absolute;
+    color: white;
+    font-size: 3em;
+    -webkit-text-stroke: 2px black;
+    max-width: 800px;
+    text-align: center;
+    display: none;
+}
+.show-end {
+    display: block;
+}
+
+.restart {
+    font-size: 1.2em;
+    padding: px;
+    border-radius: 10px;
+}
+.restart:hover {
+    cursor: pointer;
+}
